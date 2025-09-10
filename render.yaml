@@ -1,9 +1,7 @@
 services:
   - type: web
     name: smart-expense-tracker
-    runtime: java
-    buildCommand: "./mvnw clean package"
-    startCommand: "java -jar target/expense-tracker-web-0.0.1-SNAPSHOT.jar"
+    runtime: docker
     healthCheckPath: /login
     envVars:
       - key: SERVER_PORT
@@ -16,4 +14,3 @@ services:
           property: connectionString
       - key: GEMINI_API_KEY
         sync: false
-
